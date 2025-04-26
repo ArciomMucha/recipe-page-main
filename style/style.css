@@ -1,0 +1,222 @@
+@font-face {
+  font-family: 'Outfit';
+  src: url('../assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900; 
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Young Serif';
+  src: url('../assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+    font-size: 16px;
+    background-color: antiquewhite;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    color: hsl(30, 10%, 34%);
+}
+
+.main-container img {
+    width: 100%; 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+    object-fit: contain; 
+    margin-bottom: 20px; 
+}
+
+h1, h2 {
+  font-family: 'Young Serif', serif;
+  font-weight: 400;
+  color: hsl(14, 45%, 36%);
+}
+
+.main-container {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .main-header {
+    text-align: left;
+    color: hsl(24, 5%, 18%);
+  }
+
+  .preparation-container {
+    background-color: #fff7fc;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .preparation-container ul {
+    padding-left: 20px; /* Общий отступ списка от края */
+    list-style: none; /* Выключаем стандартные маркеры */
+  }
+  
+  .preparation-container li {
+    position: relative;
+    color: hsl(30, 10%, 34%); /* Цвет текста */
+    margin-bottom: 8px; /* Отступ между пунктами */
+    padding-left: 45px; /* Отступ всего текста от левого края */
+    margin-left: 0; /* Убираем лишний отступ */
+    text-indent: 0; /* Обнуляем выступ первой строки */
+  }
+  
+  .preparation-container li::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: hsl(332, 51%, 32%); /* Фиолетовый кружок */
+    border-radius: 50%;
+    position: absolute;
+    left: 10px; /* Позиция кружка */
+    top: 8px; /* Выравнивание по вертикали */
+  }
+
+  body h2 {
+    text-align: left;
+    /* сверху | справа | снизу | слева */
+    margin: 10px 0 10px 0;
+  }
+
+  .preparation-container h3 {
+    color: hsl(332, 51%, 32%);
+    /* сверху | справа | снизу | слева */
+    margin: 20px 0 20px 25px;
+    font-weight: 600;
+    
+  }
+
+  .global {
+    color: hsl(30, 10%, 34%);
+    font-weight: bolder;
+  }
+
+  .ingredients-container {
+    border-bottom: 1px hsl(30, 10%, 34%);
+  }
+
+  .ingredients-container ul {
+    padding-left: 0px; /* Общий отступ списка от края */
+    list-style: none; /* Выключаем стандартные маркеры */
+  }
+  
+  .ingredients-container li {
+    position: relative;
+    color: hsl(30, 10%, 34%); /* Цвет текста */
+    margin-bottom: 8px; /* Отступ между пунктами */
+    padding-left: 45px; /* Отступ всего текста от левого края */
+    margin-left: 0; /* Убираем лишний отступ */
+    text-indent: 0; /* Обнуляем выступ первой строки */
+  }
+  
+  .ingredients-container li::before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: hsl(14, 45%, 36%);; /* Фиолетовый кружок */
+    position: absolute;
+    left: 10px; /* Позиция кружка */
+    top: 8px; /* Выравнивание по вертикали */
+  }
+
+  .instructions-container ol {
+    list-style-type: decimal;
+    padding-left: 25px; /* Отступ для цифр */
+    color: hsl(14, 45%, 36%); /* Цвет цифр */
+  }
+  
+  .instructions-container ol li {
+    color: hsl(30, 10%, 34%); 
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  
+  .instructions-container ol li::marker {
+    color: hsl(14, 45%, 36%); 
+    font-weight: bold;
+  }
+
+  .divider {
+    border: none;         
+    height: 1px;          
+    background-color: hsl(30, 18%, 87%); /* Цвет */
+    margin: 20px 0;       /* Отступы сверху/снизу */
+  }
+
+  .nutrition-table {
+    width: 100%;
+    border-collapse: collapse; /* Самое важное свойство */
+    border-spacing: 0; /* Убираем промежутки между ячейками */
+    margin: 20px 0;
+  }
+
+  .nutrition-table td {
+    padding: 12px 0;
+    border-bottom: 1px solid hsl(30, 18%, 87%); /* Светло-серая линия */
+  }
+
+  .nutrition-table td:first-child {
+    padding-left: 20px;
+  }
+  
+  /* Убираем линию у последней строки */
+  .nutrition-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .right-column {
+    color: hsl(14, 45%, 36%);
+    font-weight: 700;
+  }
+
+  @media (max-width: 375px) {
+    .main-container {
+      padding: 0;
+      border-radius: 0;
+    }
+    
+    body {
+      background-color: white; /* Убираем фон на мобильных */
+    }
+    
+    img {
+      border-radius: 0 !important;
+    }
+  }
+  
+  /* Планшеты (376px - 1023px) */
+  @media (min-width: 376px) and (max-width: 1023px) {
+    .main-container {
+      margin: 20px auto;
+      padding: 25px;
+    }
+  }
+  
+  /* Десктопы (1440px и больше) */
+  @media (min-width: 1440px) {
+    .main-container {
+      max-width: 750px;
+      margin: 80px auto;
+      padding: 40px;
+    }
+    
+    body {
+      font-size: 18px;
+    }
+  }
