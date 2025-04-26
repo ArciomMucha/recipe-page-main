@@ -14,21 +14,41 @@
   font-display: swap;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-size: 16px;
-    background-color: antiquewhite;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 400;
-    color: hsl(30, 10%, 34%);
+  font-size: 16px;
+  background-color: antiquewhite;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  color: hsl(30, 10%, 34%);
+}
+
+.main-container {
+  width: 100%;
+  max-width: 600px;
+  min-height: 100vh;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  padding: 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .main-container img {
-    width: 100%; 
-    max-width: 100%; 
-    height: auto; 
-    border-radius: 8px; 
-    object-fit: contain; 
-    margin-bottom: 20px; 
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  display: block;
 }
 
 h1, h2 {
@@ -37,186 +57,202 @@ h1, h2 {
   color: hsl(14, 45%, 36%);
 }
 
-.main-container {
+.main-header {
+  text-align: left;
+  color: hsl(24, 5%, 18%);
+}
+
+.preparation-container {
+  background-color: #fff7fc;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px; 
+  box-sizing: border-box; 
+  margin-bottom: 20px; 
+}
+
+
+.preparation-container ul {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.preparation-container li {
+  position: relative;
+  color: hsl(30, 10%, 34%);
+  margin-bottom: 8px;
+  padding-left: 45px;
+  margin-left: 0;
+  text-indent: 0;
+}
+
+.preparation-container li::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: hsl(332, 51%, 32%);
+  border-radius: 50%;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+}
+
+body h2 {
+  text-align: left;
+  margin: 10px 0;
+}
+
+.preparation-container h3 {
+  color: hsl(332, 51%, 32%);
+  margin: 20px 0 20px 25px;
+  font-weight: 600;
+}
+
+.global {
+  color: hsl(30, 10%, 34%);
+  font-weight: bolder;
+}
+
+.ingredients-container {
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+}
+
+.ingredients-container ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.ingredients-container li {
+  position: relative;
+  color: hsl(30, 10%, 34%);
+  margin-bottom: 8px;
+  padding-left: 45px;
+  margin-left: 0;
+  text-indent: 0;
+}
+
+.ingredients-container li::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: hsl(14, 45%, 36%);
+  position: absolute;
+  left: 10px;
+  top: 8px;
+}
+
+.instructions-container ol {
+  list-style-type: decimal;
+  padding-left: 25px;
+  color: hsl(14, 45%, 36%);
+}
+
+.instructions-container ol li {
+  color: hsl(30, 10%, 34%);
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.instructions-container ol li::marker {
+  color: hsl(14, 45%, 36%);
+  font-weight: bold;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: hsl(30, 18%, 87%);
+  margin: 20px 0;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 20px 0;
+}
+
+.nutrition-table td {
+  padding: 12px 0;
+  border-bottom: 1px solid hsl(30, 18%, 87%);
+}
+
+.nutrition-table td:first-child {
+  padding-left: 20px;
+}
+
+.nutrition-table tr:last-child td {
+  border-bottom: none;
+}
+
+.right-column {
+  color: hsl(14, 45%, 36%);
+  font-weight: 700;
+}
+
+/* Мобильная версия */
+@media (max-width: 375px) {
+  body {
+    background-color: white;
+    padding: 0;
+  }
+  
+  .main-container {
     width: 100%;
-    max-width: 600px;
-    min-height: 100vh;
-    background: white;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-  }
-
-  .main-header {
-    text-align: left;
-    color: hsl(24, 5%, 18%);
-  }
-
-  .preparation-container {
-    background-color: #fff7fc;
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  .preparation-container ul {
-    padding-left: 20px; /* Общий отступ списка от края */
-    list-style: none; /* Выключаем стандартные маркеры */
+    max-width: 100%;
+    min-height: auto;
+    padding: 0 15px 20px;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
   }
   
-  .preparation-container li {
-    position: relative;
-    color: hsl(30, 10%, 34%); /* Цвет текста */
-    margin-bottom: 8px; /* Отступ между пунктами */
-    padding-left: 45px; /* Отступ всего текста от левого края */
-    margin-left: 0; /* Убираем лишний отступ */
-    text-indent: 0; /* Обнуляем выступ первой строки */
+  .main-container img {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: -15px;
+    border-radius: 0;
   }
   
-  .preparation-container li::before {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
-    background-color: hsl(332, 51%, 32%); /* Фиолетовый кружок */
-    border-radius: 50%;
-    position: absolute;
-    left: 10px; /* Позиция кружка */
-    top: 8px; /* Выравнивание по вертикали */
-  }
-
-  body h2 {
-    text-align: left;
-    /* сверху | справа | снизу | слева */
-    margin: 10px 0 10px 0;
-  }
-
-  .preparation-container h3 {
-    color: hsl(332, 51%, 32%);
-    /* сверху | справа | снизу | слева */
-    margin: 20px 0 20px 25px;
-    font-weight: 600;
-    
-  }
-
-  .global {
-    color: hsl(30, 10%, 34%);
-    font-weight: bolder;
-  }
-
-  .ingredients-container {
-    border-bottom: 1px hsl(30, 10%, 34%);
-  }
-
-  .ingredients-container ul {
-    padding-left: 0px; /* Общий отступ списка от края */
-    list-style: none; /* Выключаем стандартные маркеры */
+  .main-container > div:not([class]) {
+    padding: 0 5px;
   }
   
+  .preparation-container,
+  .ingredients-container,
+  .instructions-container {
+    padding: 15px;
+    width: auto;
+    margin: 0 -5px;
+  }
+  
+  .preparation-container li,
   .ingredients-container li {
-    position: relative;
-    color: hsl(30, 10%, 34%); /* Цвет текста */
-    margin-bottom: 8px; /* Отступ между пунктами */
-    padding-left: 45px; /* Отступ всего текста от левого края */
-    margin-left: 0; /* Убираем лишний отступ */
-    text-indent: 0; /* Обнуляем выступ первой строки */
+    padding-left: 30px;
   }
   
+  .preparation-container li::before,
   .ingredients-container li::before {
-    content: "";
-    display: block;
-    width: 4px;
-    height: 4px;
-    background-color: hsl(14, 45%, 36%);; /* Фиолетовый кружок */
-    position: absolute;
-    left: 10px; /* Позиция кружка */
-    top: 8px; /* Выравнивание по вертикали */
-  }
-
-  .instructions-container ol {
-    list-style-type: decimal;
-    padding-left: 25px; /* Отступ для цифр */
-    color: hsl(14, 45%, 36%); /* Цвет цифр */
+    left: 8px;
   }
   
-  .instructions-container ol li {
-    color: hsl(30, 10%, 34%); 
-    margin-bottom: 10px;
-    padding-left: 20px;
-  }
-  
-  .instructions-container ol li::marker {
-    color: hsl(14, 45%, 36%); 
-    font-weight: bold;
-  }
-
-  .divider {
-    border: none;         
-    height: 1px;          
-    background-color: hsl(30, 18%, 87%); /* Цвет */
-    margin: 20px 0;       /* Отступы сверху/снизу */
-  }
-
   .nutrition-table {
-    width: 100%;
-    border-collapse: collapse; /* Самое важное свойство */
-    border-spacing: 0; /* Убираем промежутки между ячейками */
-    margin: 20px 0;
+    width: calc(100% - 10px);
+    margin: 20px 5px;
   }
+}
 
-  .nutrition-table td {
-    padding: 12px 0;
-    border-bottom: 1px solid hsl(30, 18%, 87%); /* Светло-серая линия */
-  }
-
-  .nutrition-table td:first-child {
-    padding-left: 20px;
+/* Десктопная версия */
+@media (min-width: 1440px) {
+  .main-container {
+    max-width: 750px;
+    margin: 80px auto;
+    padding: 40px;
   }
   
-  /* Убираем линию у последней строки */
-  .nutrition-table tr:last-child td {
-    border-bottom: none;
+  body {
+    font-size: 18px;
   }
-
-  .right-column {
-    color: hsl(14, 45%, 36%);
-    font-weight: 700;
-  }
-
-  @media (max-width: 375px) {
-    .main-container {
-      padding: 0;
-      border-radius: 0;
-    }
-    
-    body {
-      background-color: white; /* Убираем фон на мобильных */
-    }
-    
-    img {
-      border-radius: 0 !important;
-    }
-  }
-  
-  /* Планшеты (376px - 1023px) */
-  @media (min-width: 376px) and (max-width: 1023px) {
-    .main-container {
-      margin: 20px auto;
-      padding: 25px;
-    }
-  }
-  
-  /* Десктопы (1440px и больше) */
-  @media (min-width: 1440px) {
-    .main-container {
-      max-width: 750px;
-      margin: 80px auto;
-      padding: 40px;
-    }
-    
-    body {
-      font-size: 18px;
-    }
-  }
+}
